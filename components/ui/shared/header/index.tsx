@@ -1,5 +1,4 @@
 import { APP_NAME } from "@/constants/index";
-
 import Image from "next/image";
 import Link from "next/link";
 import ToggleTheme from "./toggle-mode";
