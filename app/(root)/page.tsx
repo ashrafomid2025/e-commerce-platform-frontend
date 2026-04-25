@@ -6,7 +6,7 @@ export default async function Home() {
 
   return (
     <div>
-      <p>this is the main page</p>
+      <p>Latest Arrivals</p>
     </div>
   );
 }
