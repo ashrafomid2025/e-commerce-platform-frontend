@@ -6,7 +6,7 @@ function Hero() {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 1500,
+    speed: 2500,
     autoplay: true,
   };
   return (
