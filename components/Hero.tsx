@@ -15,7 +15,7 @@ function Hero() {
         <div>
           <Image
             src="/images/banner-1.jpg"
-            alt="banner 1"
+            alt="banner 1 image"
             className="object-cover h-72 w-full"
             height={1000}
             width={1000}
@@ -24,7 +24,7 @@ function Hero() {
         <div>
           <Image
             src="/images/banner-2.jpg"
-            alt="banner 1"
+            alt="banner 2 image"
             className="object-cover w-full h-72"
             height={1000}
             width={1000}
