@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 export const metadata: Metadata = {
   title: {
     default: APP_NAME,
-    template: `%s |${APP_NAME}`,
+    template: `%s|${APP_NAME}`,
     absolute: APP_NAME,
   },
 
@@ -25,12 +25,8 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn(
-        "h-full",
-        "antialiased",
-
-        inter.variable,
-      )}
+      suppressHydrationWarning
+      className={cn("h-full", "antialiased --font-sans", inter.variable)}
     >
       <body>
         <ThemeProvider
