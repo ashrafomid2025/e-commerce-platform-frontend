@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { Input } from "../../input";
+import { Input } from "../../ui/input";
 import { div } from "framer-motion/client";
 
 function SearchInput() {
