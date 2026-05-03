@@ -31,7 +31,7 @@ function ProductList({
         </Link>
       ))}
       <div className="w-full flex my-4 justify-center">
-        <Button>View All Products</Button>
+        {/* <Button>View All Products</Button> */}
       </div>
     </div>
   );
