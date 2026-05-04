@@ -1,12 +1,12 @@
-import ProductList from "@/components/shared/products/product-list";
+import AllProductList from "@/components/shared/products/all-product-list";
+
 import { getProducts } from "@/lib/actions/product.action";
 import React from "react";
 
 async function ProductPage() {
-  const products = await getProducts();
   return (
     <div>
-      <ProductList productList={products} title="All Products" />
+      <AllProductList title="All Products" />
     </div>
   );
 }

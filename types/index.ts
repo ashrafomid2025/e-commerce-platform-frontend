@@ -20,4 +20,4 @@ type Product = {
   stock: number;
 };
 
-type ProductInfo = image[] & Product & productDetails;
+export type ProductInfo = image[] & Product & productDetails;

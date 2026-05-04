@@ -13,7 +13,7 @@ function ProductList({
   title?: string;
 }) {
   const totalPage = productList.meta.last_page;
-  console.log(totalPage);
+
   return (
     <div className="my-10">
       <h2 className="h2-bold mb-4">{title ? title : "New Arrivals"}</h2>
@@ -25,13 +25,11 @@ function ProductList({
               <ProductCard key={product.id} product={product} />
             ))}
       </div>
-      {productList.meta.links.map((btn: any) => (
-        <Link href="" key={btn.label}>
-          <Button>{btn.label}</Button>
-        </Link>
-      ))}
+
       <div className="w-full flex my-4 justify-center">
-        {/* <Button>View All Products</Button> */}
+        <Button>
+          <Link href="/products">View All Products</Link>
+        </Button>
       </div>
     </div>
   );
