@@ -12,11 +12,11 @@ function AllProductList({
   title,
 }: {
   limit?: number;
-
   title?: string;
 }) {
   const [link, setLink] = useState("http://localhost:8000/api/products?page=1");
   const [list, setList] = useState<any>([]);
+
   useEffect(() => {
     async function getData() {
       const products = await getAllProducts(link);
@@ -34,24 +34,25 @@ function AllProductList({
       <h2 className="h2-bold mb-4">{title ? title : "New Arrivals"}</h2>
       <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {list.data.length > 0 &&
-          list.data
-            .slice(0, limit ? limit : list.data.length)
-            .map((product: any) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
+          list.data.map((product: any) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
       </div>
-      <div className="w-full max-w-sm mx-auto overflow-x-auto flex justify-between items-center">
+      <div className="w-full pt-4 md:pt-6 max-w-md mx-auto flex justify-between items-center">
         {list.meta.links.map((link: any) => (
           <Button
-            onClick={() => setLink(link.url)}
+            onClick={() =>
+              setLink(
+                link.url
+                  ? link.url
+                  : `http://localhost:8000/api/products?page=${list.meta.current_page}`,
+              )
+            }
             key={link.label}
             variant={link.active ? "default" : "outline"}
             dangerouslySetInnerHTML={{ __html: link.label }}
           />
         ))}
-      </div>
-      <div className="w-full flex my-4 justify-center">
-        {/* <Button>View All Products</Button> */}
       </div>
     </div>
   );
