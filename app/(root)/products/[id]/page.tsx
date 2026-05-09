@@ -3,7 +3,6 @@ import ProductPrice from "@/components/shared/products/product-price";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { getProducts } from "@/lib/actions/product.action";
-import React from "react";
 
 async function page({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
