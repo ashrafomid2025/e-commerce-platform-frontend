@@ -3,11 +3,20 @@ import ProductPrice from "@/components/shared/products/product-price";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { getProducts } from "@/lib/actions/product.action";
+import { getReviews } from "@/lib/actions/review.action";
 
 async function page({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const products = await getProducts();
+  const reviews = await getReviews();
   const product = products.data.find((x: any) => x.id == id);
+  const foundReviews = reviews.data.find(
+    (r: any) => r.product_id == product.id,
+  );
+  console.log(foundReviews);
+  // const reviewsResult = reviews.data.find(
+  //   (review: any) => review.product_id == product.id,
+
   return (
     <div className="w-full grid p-4 grid-cols-1 md:grid-cols-5 gap-4">
       <div className="col-span-2">
