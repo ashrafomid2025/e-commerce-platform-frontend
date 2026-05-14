@@ -57,7 +57,10 @@ async function page({ params }: { params: Promise<{ id: string }> }) {
           )}
         </div>
       </div>
-      <ReviewList reviews={foundReviews} />
+      <div className="w-full grid grid-cols-1 md:grid-cols-2">
+        <ReviewList reviews={foundReviews} />
+        <div></div>
+      </div>
     </div>
   );
 }
