@@ -3,7 +3,7 @@ import { formatDistanceToNow } from "date-fns";
 import { Star } from "lucide-react";
 function ReviewCard({ review }: { review: any }) {
   const commentDate = new Date(review.created_at);
-
+  console.log(commentDate);
   return (
     <div className="flex w-full justify-between p-4 border rounded-md">
       <div className="flex-1">
