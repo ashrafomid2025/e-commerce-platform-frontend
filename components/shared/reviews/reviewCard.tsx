@@ -24,11 +24,29 @@ function ReviewCard({ review }: { review: any }) {
       {/* [,,,,] */}
       <div className="flex flex-col items-end space-y-1.5">
         <h1 className="flex-start">
-          {Array.from({ length: 5 }, (_, index) => (
-            <span key={index}>
-              <Star className="text-yellow-300" />
-            </span>
-          ))}
+          {/* 7 */}
+          {Array.from({ length: 5 }, (_, index) => {
+            let fill =
+              Math.max(
+                Math.min((Number(review.rating) - index * 2) / 2, 1),
+                0,
+              ) * 100;
+
+            console.log(fill);
+            return (
+              <div key={index} className="relative ">
+                <span className="w-6 h-6">
+                  <Star className="text-yellow-500" />
+                </span>
+                <span
+                  className="w-6 h-6 absolute top-0 left-0 overflow-hidden"
+                  style={{ width: `${fill}%` }}
+                >
+                  <Star className="text-yellow-500 fill-yellow-500" />
+                </span>
+              </div>
+            );
+          })}
         </h1>
         <span className="mt-auto text-xs text-muted-foreground">
           {formatDistanceToNow(commentDate, { addSuffix: true })}
