@@ -32,7 +32,6 @@ function ReviewCard({ review }: { review: any }) {
                 0,
               ) * 100;
 
-            console.log(fill);
             return (
               <div key={index} className="relative ">
                 <span className="w-6 h-6">
