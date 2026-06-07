@@ -9,7 +9,6 @@ export default async function login(prevState: unknown, formData: FormData) {
     method: "POST",
   });
   const response = await data.json();
-  // console.log(response);
 
   return response;
 }
