@@ -10,6 +10,7 @@ type User = { id: number; name: string; email: string; phone_number: string };
 function UserButton() {
   function handleLogOut() {
     localStorage.removeItem("token");
+    setUser(null);
   }
   const [user, setUser] = useState<User | null>(null);
   useEffect(() => {
@@ -18,11 +19,16 @@ function UserButton() {
       return await getUser(token);
     }
     async function setU() {
-      setUser(await getUsers());
-      console.log(getUsers());
+      const foundUser = await getUsers();
+      if (foundUser?.id) {
+        setUser(foundUser);
+      } else {
+        setUser(null);
+      }
+      // setUser(await getUsers());
     }
     setU();
-  }, [user]);
+  }, []);
   {
     if (user) {
       return (
@@ -35,9 +41,14 @@ function UserButton() {
       );
     } else {
       return (
-        <Button asChild variant="default">
-          <Link href="/sign-in">Sign In</Link>
-        </Button>
+        <div className="flex space-x-4">
+          <Button asChild variant="default">
+            <Link href="/sign-in">Sign In</Link>
+          </Button>
+          <Button asChild className="px-4 rounded-sm" variant="outline">
+            <Link href="/sign-in">Sign Up</Link>
+          </Button>
+        </div>
       );
     }
   }

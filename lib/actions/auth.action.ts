@@ -19,6 +19,28 @@ export async function getUser(token: string) {
     },
   });
   const response = await data.json();
-  console.log(response);
+
   return response;
+}
+
+export async function signUp(prevState: unknown, formData: FormData) {
+  try {
+    const data = await fetch("https://localhost:8000/api/signup", {
+      method: "POST",
+      body: formData,
+      headers: {
+        accept: "application/json",
+      },
+    });
+    const response = await data.json();
+    return {
+      message: response,
+      status: true,
+    };
+  } catch (err) {
+    return {
+      message: "Unable to sign up",
+      status: false,
+    };
+  }
 }
