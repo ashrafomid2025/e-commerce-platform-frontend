@@ -24,23 +24,32 @@ export async function getUser(token: string) {
 }
 
 export async function signUp(prevState: unknown, formData: FormData) {
+  const inputValues = {
+    name: formData.get("name"),
+    email: formData.get("email"),
+    password: formData.get("password"),
+    phone_number: formData.get("phone_number"),
+  };
   try {
-    const data = await fetch("https://localhost:8000/api/signup", {
+    const data = await fetch("http://localhost:8000/api/signup", {
       method: "POST",
-      body: formData,
+      body: JSON.stringify(inputValues),
       headers: {
         accept: "application/json",
+        "Content-Type": "application/json",
       },
     });
+
     const response = await data.json();
+    console.log(response);
     return {
       message: response,
-      status: true,
+      success: true,
     };
   } catch (err) {
     return {
       message: "Unable to sign up",
-      status: false,
+      success: false,
     };
   }
 }
