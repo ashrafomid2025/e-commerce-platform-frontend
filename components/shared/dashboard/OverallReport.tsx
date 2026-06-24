@@ -6,6 +6,7 @@ import {
   UserCheck2Icon,
 } from "lucide-react";
 import React from "react";
+import MonthlyReviewsReport from "./MonthlyReviewsReport";
 
 function OverallReport() {
   return (
@@ -26,19 +27,7 @@ function OverallReport() {
         </div>
       </div>
       <div className="border-r ml-2 border-gray-300">
-        <div className="flex flex-col space-y-3">
-          <span className="flex gap-1 items-center dark:text-stone-50 text-gray-500 text-sm">
-            <Star size={18} /> Reviewed Products
-          </span>
-          <span className="text-gray-400 text-xs dark:text-stone-100">
-            400 previous month
-          </span>
-          <span className="text-2xl font-bold">800</span>
-          <span className="flex gap-1 items-center text-xs">
-            <ArrowUpRight size={18} className="text-green-600" /> 55.5% vs
-            previous month
-          </span>
-        </div>
+        <MonthlyReviewsReport />
       </div>
       <div className="border-r ml-2 border-gray-300">
         <div className="flex flex-col space-y-3">
