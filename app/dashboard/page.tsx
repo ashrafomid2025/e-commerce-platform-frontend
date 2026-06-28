@@ -8,7 +8,7 @@ function page() {
   const [showText, setShowText] = useState(true);
   return (
     <div className="w-full bg-stone-50 dark:bg-black min-h-screen flex justify-start gap-1">
-      <div className={`${showText ? "w-3xs " : "w-fit"}`}>
+      <div className={`${showText ? "w-3xs hidden md:block " : "w-fit"}`}>
         <DashboardSidebar showText={showText} />
       </div>
       <MainSection setShowText={setShowText} showText={showText} />

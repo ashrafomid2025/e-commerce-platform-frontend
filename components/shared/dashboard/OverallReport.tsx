@@ -11,7 +11,7 @@ import MonthlyReviewsReport from "./MonthlyReviewsReport";
 function OverallReport() {
   return (
     <div className="max-w-6xl bg-white dark:bg-gray-800/65 w-full p-5 my-4 mx-auto grid border rounded-2xl grid-cols-1 md:grid-cols-4">
-      <div className="border-r border-gray-300">
+      <div className="md:border-r border-b py-2 border-gray-300">
         <div className="flex flex-col space-y-3">
           <span className="flex gap-1 items-center dark:text-stone-50 text-gray-500 text-sm">
             <CircleDollarSign size={18} /> Monthly Revenue
@@ -26,10 +26,10 @@ function OverallReport() {
           </span>
         </div>
       </div>
-      <div className="border-r ml-2 border-gray-300">
+      <div className="md:border-r border-b py-2 ml-2 border-gray-300">
         <MonthlyReviewsReport />
       </div>
-      <div className="border-r ml-2 border-gray-300">
+      <div className="md:border-r border-b py-2 ml-2 border-gray-300">
         <div className="flex flex-col space-y-3">
           <span className="flex gap-1 items-center dark:text-stone-50 text-gray-500 text-sm">
             <UserCheck2Icon size={18} /> New Customer
@@ -44,7 +44,7 @@ function OverallReport() {
           </span>
         </div>
       </div>
-      <div className=" ml-2 border-gray-300">
+      <div className="md:border-r md:border-b-0 border-b py-2 ml-2 border-gray-300">
         <div className="flex flex-col space-y-3">
           <span className="flex gap-1 items-center dark:text-stone-50 text-gray-500 text-sm">
             <ShoppingBasket size={18} /> Total Products
