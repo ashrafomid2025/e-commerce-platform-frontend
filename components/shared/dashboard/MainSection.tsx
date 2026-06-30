@@ -1,6 +1,7 @@
 import React from "react";
 import DashboardHeader from "./DashboardHeader";
 import OverallReport from "./OverallReport";
+import AllProduct from "./AllProduct";
 
 function MainSection({
   setShowText,
@@ -14,6 +15,7 @@ function MainSection({
       <DashboardHeader setShowText={setShowText} showText={showText} />
       <div className="px-5">
         <OverallReport />
+        <AllProduct />
       </div>
     </div>
   );
