@@ -15,3 +15,18 @@ export async function fetchAllProducts() {
   const response = await data.json();
   return response.products.data;
 }
+
+export default async function storeProduct() {
+  const data = await fetch(
+    "http://localhost:8000/api/dashboard/store-product",
+    {
+      method: "POST",
+      headers: {
+        accept: "application/json",
+        Authorization: `Bearer`,
+      },
+    },
+  );
+  if (data.status === 200) {
+  }
+}
