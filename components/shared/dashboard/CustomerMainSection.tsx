@@ -5,8 +5,9 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { PackagePlus } from "lucide-react";
 import ProductForm from "./ProductForm";
+import AllUsers from "./all-users";
 
-function AddProductMainSection({
+function CustomerMainSection({
   showText,
   setShowText,
 }: {
@@ -17,18 +18,12 @@ function AddProductMainSection({
     <div className="w-full flex flex-col">
       <DashboardHeader showText={showText} setShowText={setShowText} />
       <div className="w-full h-full flex justify-center items-center">
-        <div className="w-full max-w-5xl mx-auto border p-5 border-gray-300 rounded-md dark:border-gray-100 ">
-          <div className="flex w-full flex-col items-center">
-            <PackagePlus size={32} />
-            <h1 className="text-3xl my-4 font-semibold text-gray-400 dark:text-stone-100">
-              Add New Products
-            </h1>
-          </div>
-          <ProductForm />
+        <div className="w-full max-w-5xl mx-auto  p-5 border-gray-300 rounded-md dark:border-gray-100 ">
+          <AllUsers />
         </div>
       </div>
     </div>
   );
 }
 
-export default AddProductMainSection;
+export default CustomerMainSection;

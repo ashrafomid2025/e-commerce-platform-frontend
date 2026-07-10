@@ -26,7 +26,7 @@ function DashboardSidebar({ showText }: { showText: boolean }) {
       <div className="">
         <CardHeader className="px-2 py-2">
           <CardTitle className="flex w-fit gap-2 items-center">
-            <Image src="./images/logo.svg" alt="logo" height={30} width={30} />
+            <Image src="../images/logo.svg" alt="logo" height={30} width={30} />
             <span
               className={`${showText ? "block" : "hidden"} text-xl font-bold`}
             >
