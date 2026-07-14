@@ -1,5 +1,5 @@
-export async function getAllUsers(): Promise<any> {
-  const data = await fetch("http://localhost:8000/api/dashboard/all-users");
+export async function getAllUsers(url: string): Promise<any> {
+  const data = await fetch(url);
   const response = await data.json();
   return response;
 }
@@ -7,12 +7,11 @@ export async function getAllUsers(): Promise<any> {
 export async function deleteUser(prevstate: unknown, formData: FormData) {
   try {
     const data = await fetch(
-      `http://localhost:8000/api/dashboard/delete-user/${formData.get("id")}`,
+      `http://localhost:8000/api/dashboard/all-users/${formData.get("id")}`,
       {
         method: "DELETE",
       },
     );
-    const response = await data.json();
 
     return {
       message: "user deleted successfully",
@@ -24,4 +23,12 @@ export async function deleteUser(prevstate: unknown, formData: FormData) {
       state: false,
     };
   }
+}
+
+export async function Edit(id: number) {
+  const response = await fetch(
+    `http://localhost:8000/api/dashboard/edit-user/${id}`,
+  );
+  const data = await response.json();
+  return data;
 }
